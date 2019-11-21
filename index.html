@@ -47,6 +47,22 @@
   
   
 
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+
+</script>
+
+
 
   
 
@@ -110,11 +126,11 @@
 			
 			
 			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1334445174&auto=1&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=1334445174&auto=1&height=32"></iframe>
 			</div>
 			
 				
-				<p style="font-size: 12px;">这似乎是首纯音乐，请尽情的欣赏它吧！<p>
+				<p style="font-size: 12px;">尽情的享受这首曲子吧！<p>
 			
 		
 		</nav>
@@ -225,33 +241,9 @@
     <p><em>白茶清欢无别事，我在等风也等你</em><br><em>纸上得来终觉浅，觉知此事要躬行</em><br><em>自有搭建个人博客的想法的那一刻开始到现在应该也快一个星期了，我就把我这一星期搭建hexo博客的过程复现一遍</em></p>
 <hr>
 <p><strong><em>以下演示基于windows 10系统，所有以下在windows10 64位下进行演示。</em></strong></p>
-<ol>
-<li>安装 <em>Node.js</em><ul>
-<li>因为 hexo 是基于 node 框架的，所以呢，我们首先需要下载安装node.js。<br><a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a></li>
-<li>安装步骤一直自定义下一步，如需更改安装路径将C改成D即可，最后点击Finish。</li>
-</ul>
-</li>
-<li>安装<em>Git</em><ul>
-<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a></li>
-<li>选择适合自己系统的安装即可，同样，默认一直选择下一步安装即可。安装成功在开始菜单这个Git Bash下载下来就相当于Linux中的终端窗口了，以后我们就用这个东东来打开终端。</li>
-</ul>
-</li>
-<li>安装<em>hexo</em><ul>
-<li>新建一个文件夹，例如我建的<em>blog</em></li>
-<li>打开文件夹，然后在空白处点鼠标的右键，<em>Git Bash Here</em></li>
-<li>建好后进去右键 git bash here 输入 node -v 看会不会显示出版本号,接着输入npm -v同理看有无版本号</li>
-<li>接下来安装cnpm，在上面的终端中输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm -registry=https://registry.npm.taobao.org/</span><br><span class="line">``` </span><br><span class="line">这里选择镜像到淘宝因为npm在国内的下载速度堪忧，一般情况可以安装成功，不成功就在执行一次命令</span><br><span class="line">- 接着就可以安装*hexo*了</span><br><span class="line">  输入</span><br></pre></td></tr></table></figure>
-cnpm install -g hexo-cli<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装后也可以用**hexo -v**检查是否成功。</span><br><span class="line">4. 搭建*hexo*框架</span><br><span class="line">我们刚刚建的博客文件夹不管是之后进阶美化还是发博客都在这个文件夹中进行操作,与此同时如果你在之后操作过程中瞎折腾回不去了就直接删掉文件夹中内容重新 hexo init回档好了</span><br><span class="line">在当前目录下执行</span><br></pre></td></tr></table></figure>
-hexo init<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">完后正常情况最后会有一行**INFO Start blogging with Hexo!**</span><br><span class="line">再输入一行</span><br></pre></td></tr></table></figure>
-hexo s<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">你的本地环境就搭建好了，可以用Ctrl+C停止</span><br><span class="line">浏览器里输入**localhost: 4000**就能本地查看你的博客了</span><br><span class="line">5. 然后就可以部署到远端了</span><br><span class="line">注册一个github账号</span><br><span class="line">仓库命名开头一定要是你自己的昵称.这个仓库就是存你hexo数据的地方</span><br><span class="line">然后我们输入命令</span><br><span class="line">``` </span><br><span class="line">npm install hexo-deployer-git -save</span><br><span class="line">或</span><br><span class="line">cnpm install -save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-这个插件相当于是沟通你本地数据与github仓库的通道,之后在每次本地数据编辑完后都要用到它<br>首先查看目录C:Users\用户名<br>有没有.ssh目录,如果没有，在本地blog文件内打开git bash hexo,输入命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱地址&quot;</span><br></pre></td></tr></table></figure>
-然后按3个回车，再检查有没有.ssh目录<br>打开id_rsa.pub这个文件，进入你刚才创建的仓库，设置-部署公钥-新建部署公钥，公钥名称可以不填，将刚才复制的公钥粘贴在公钥内容里面</li>
-</ul>
-</li>
-<li>修改站点配置文件 deploy 参数内容<br>到文件夹根目录下找config.yml的配置文件进去<br>type后加git 并添加repo: <a href="https://github.com/youname/yourname.git/" target="_blank" rel="noopener">https://github.com/youname/yourname.git/</a> ; branch: master repo后面的网址就是新建仓库的网址<br>接下来就是搭建的最后一步 : bit bash 中输入hexo d 进行最终的部署工作, 这时它会让你填你的username和password 作为进入仓库的凭证<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global useer.email &quot;you@example.com&quot;</span><br><span class="line">git config --global useer.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><strong>注意一下，这一步输错的话呢，就的重头再来了</strong><br>还要注意的呢就是冒号后面要有空格<br>win7和win10有点区别，未完待续。。。。。</p>
-
+    
+    <a class="article-more-a" href="/2019/11/21/Hexo%E5%AD%A6%E4%B9%A0/#more">more >></a>
+    
     
 
     
@@ -328,175 +320,9 @@ hexo s<figure class="highlight plain"><table><tr><td class="gutter"><pre><span c
     <p>###本文主要叙述如何写出更加优美的markdown文档。</p>
 <ul>
 <li>标题<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 标题一级</span><br><span class="line">## 标题二级</span><br><span class="line">### 标题三级</span><br><span class="line">#### 标题四级</span><br><span class="line">##### 标题五级</span><br><span class="line">###### 标题六级</span><br></pre></td></tr></table></figure>
-<h1 id="标题一级"><a href="#标题一级" class="headerlink" title="标题一级"></a>标题一级</h1><h2 id="标题二级"><a href="#标题二级" class="headerlink" title="标题二级"></a>标题二级</h2><h3 id="标题三级"><a href="#标题三级" class="headerlink" title="标题三级"></a>标题三级</h3><h4 id="标题四级"><a href="#标题四级" class="headerlink" title="标题四级"></a>标题四级</h4><h5 id="标题五级"><a href="#标题五级" class="headerlink" title="标题五级"></a>标题五级</h5><h6 id="标题六级"><a href="#标题六级" class="headerlink" title="标题六级"></a>标题六级</h6></li>
-<li>字体样式</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**加粗字体**</span><br><span class="line">*斜体字体*</span><br><span class="line">***斜体与加粗***</span><br><span class="line">_这也能显示斜体_</span><br><span class="line">~~此段内容删除~~</span><br></pre></td></tr></table></figure>
-<p><strong>加粗字体</strong><br><em>斜体字体</em><br><strong><em>斜体与加粗</em></strong><br><em>这也能显示斜体</em><br><del>此段内容删除</del></p>
-<ul>
-<li>引用文字<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这里添加引用文字</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里添加引用文字</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 带有多个段落的块引用</span><br><span class="line">&gt;</span><br><span class="line">&gt; 带有多个段落的块引用</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>带有多个段落的块引用</p>
-<p>带有多个段落的块引用</p>
-</blockquote>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 嵌套引用1.</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt;  嵌套引用2.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>嵌套引用1.</p>
-<blockquote>
-<p> 嵌套引用2.</p>
-</blockquote>
-</blockquote>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; #### 标题四级</span><br><span class="line">&gt;</span><br><span class="line">&gt; - 段落一</span><br><span class="line">&gt; - 段落二.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *斜体* 与 **加粗**.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<h4 id="标题四级-1"><a href="#标题四级-1" class="headerlink" title="标题四级"></a>标题四级</h4><ul>
-<li><p>段落一</p>
-</li>
-<li><p>段落二.</p>
-<p><em>斜体</em> 与 <strong>加粗</strong>.</p>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>清单列表格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 条目一</span><br><span class="line">98. 条目二</span><br><span class="line">97. 条目三</span><br><span class="line">96. 条目四</span><br><span class="line">    1. 缩进一 前面4个空格</span><br><span class="line">    2. 缩进二 前面4个空格</span><br><span class="line">    9. 缩进三 或双Tab</span><br><span class="line">100. 条目五</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol>
-<li>条目一</li>
-<li>条目二</li>
-<li>条目三</li>
-<li>条目四<ol>
-<li>缩进一 前面4个空格</li>
-<li>缩进二 前面4个空格</li>
-<li>缩进三 或双Tab</li>
-</ol>
-</li>
-<li>条目五</li>
-</ol>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 条目一</span><br><span class="line">- 条目二</span><br><span class="line">+ 条目三</span><br><span class="line">- 条目四</span><br><span class="line">    * 缩进一 前面4个空格</span><br><span class="line">    * 缩进二 前面4个空格</span><br><span class="line">    * 缩进三 或双Tab</span><br><span class="line">+ 条目五</span><br></pre></td></tr></table></figure>
-<ul>
-<li>条目一</li>
-</ul>
-<ul>
-<li>条目二</li>
-</ul>
-<ul>
-<li>条目三</li>
-</ul>
-<ul>
-<li>条目四<ul>
-<li>缩进一 前面4个空格</li>
-<li>缩进二 前面4个空格</li>
-<li>缩进三 或双Tab</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>条目五</li>
-</ul>
-<ul>
-<li>单行短句或代码块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`单行短句`</span><br><span class="line">``我也是单行短句``</span><br><span class="line">```[回车]我是代码块[回车]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是代码块</span><br><span class="line">`</span><br></pre></td></tr></table></figure></li>
-<li>水平线</li>
-</ul>
-<hr>
-<hr>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`单行短句`</span><br><span class="line">``我也是单行短句``</span><br><span class="line">```[回车]我是代码块[回车]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是代码块</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<ul>
-<li>水平线</li>
-</ul>
-<hr>
-<hr>
-<hr>
-<ul>
-<li><p>链接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[我的主页-无备注](https://www.jianshu.com/u/b073bda81e95)</span><br><span class="line">[我的主页-有备注](https://www.jianshu.com/u/b073bda81e95 &quot;我的主页备注信息&quot;)</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.jianshu.com/u/b073bda81e95" target="_blank" rel="noopener">我的主页-无备注</a><br><a href="https://www.jianshu.com/u/b073bda81e95" target="_blank" rel="noopener" title="我的主页备注信息">我的主页-有备注</a></p>
-</li>
-<li><p>表格</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 标题|内容|备注|</span><br><span class="line">| ------ | :------:|------:|</span><br><span class="line">|标题1 |内容1|备注1|</span><br><span class="line">| 标题2 | 内容2|备注2|</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>标题</th>
-<th align="center">内容</th>
-<th align="right">备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>标题1</td>
-<td align="center">内容1</td>
-<td align="right">备注1</td>
-</tr>
-<tr>
-<td>标题2</td>
-<td align="center">内容2</td>
-<td align="right">备注2</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>-:  设置内容和标题栏居右对齐</p>
-</li>
-<li><p>:-  设置内容和标题栏居左对齐</p>
-</li>
-<li><p>:-: 设置内容和标题栏居中对齐</p>
-</li>
-</ul>
-<hr>
-<ul>
-<li><p>插入图片</p>
-<ul>
-<li>Markdown插图片有三种方法各种Markdown编辑器的插图方式也都包含在这三种方法之内<ul>
-<li>插入本地图片<br>插入网络图片<br>把图片存入markdown文件 图片转化为base64字符串<br>  base64字符串转化为图片</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>插入图片的基础格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt text](图片链接 &quot;optional title&quot;)</span><br></pre></td></tr></table></figure>
-<p>[图片上传失败…(image-7c2954-1574314679412)]</p>
-</li>
-<li><p>Alt text：图片的Alt标签，用来描述图片的关键词，可以不写。最初的本意是当图片因为某种原因不能被显示时而出现的替代文字，后来又被用于SEO，可以方便搜索引擎根据Alt text里面的关键词搜索到图片。 图片链接：可以是图片的本地地址或者是网址。”optional title”：鼠标悬置于图片上会出现的标题文字，可以不写。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![1.jpg](https://upload-images.jianshu.io/upload_images/17269571-0c7500da491e19db.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/17269571-22a021fc2de1c779.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.jpg"></p>
-<ul>
-<li>在Markdown中写注释<br>hack方法<br>hack方法就是利用markdown的解析原理来实现注释的。</li>
-</ul>
-<p>一般有的markdown解析器不支持上面的注释方法，这个时候就可以用hack方法。</p>
-<p>hack方法比上面2种方法稳定得多，但是语义化太差。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[//]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[//]: # (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">其中，这种方法最稳定，适用性最强：</span><br><span class="line"></span><br><span class="line">[//]: # (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">这种方法最可爱，超级无敌萌啊：</span><br><span class="line"></span><br><span class="line">[^_^]: # (哈哈我是注释，不会在浏览器中显示。)</span><br></pre></td></tr></table></figure>
-<p>既然Markdown内嵌html语法，那么就可以用可以用隐藏的html标签。<br>注意：需要在前面空一行<br>1.markdowm首行缩进方法<br>  一个汉字占两个空格大小，所以使用四个空格就可以达到首行缩进两个汉字的效果。有如下几种方法：</p>
-<p>一个空格大小的表示：&ensp;或&#8194;，此时只要在相应需要缩进的段落前加上 4个 如上的标记即可，注意要带上分号。</p>
-<p>两个空格的大小表示：&emsp;或&#8195;，同理，使用2个即可缩进2个汉字，推荐使用该方式。</p>
-<p>不换行空格：&nbsp;或&#160;，使用4个&#160;即可。<br>换行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure>
-<p>上标：<sup>2</sup><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;sup&gt;2&lt;/sup&gt;</span><br></pre></td></tr></table></figure><br>下表:<sub>2</sub></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;sub&gt;2&lt;/sub&gt;</span><br></pre></td></tr></table></figure>
-<p>以上空格实体的详细介绍如下：</p>
-<p>2.HTML中的实体空格<br>  HTML提供了5种空格实体（space entity），它们拥有不同的宽度，非断行空格（&nbsp;）是常规空格的宽度，可运行于所有主流浏览器。其他几种空格（&ensp; &emsp; &thinsp; &zwnj; &zwj;）在不同浏览器中宽度各异。</p>
-<p>&nbsp;<br>  它叫不换行空格，全称是 No-Break Space，它是最常见和我们使用最多的空格，大多数的人可能只接触了&nbsp;，它是按下space键产生的空格。在HTML中，如果你用空格键产生此空格，空格是不会累加的（只算1个）。要使用html实体表示才可累加，该空格占据宽度受字体影响明显而强烈。</p>
-<p>&ensp;<br>  它叫“半角空格”，全称是 En Space，en是字体排印学的计量单位，为em宽度的一半。根据定义，它等同于字体度的一半（如16px字体中就是8px）。名义上是小写字母n的宽度。此空格传承空格家族一贯的特性：透明的，此空格有个相当稳健的特性，就是其占据的宽度正好是1/2个中文宽度，而且基本上不受字体影响。</p>
-<p>&emsp;<br>  它叫“全角空格”，全称是 Em Space，em是字体排印学的计量单位，相当于当前指定的点数。例如，1 em在16px的字体中就是16px。此空格也传承空格家族一贯的特性：透明的，此空格也有个相当稳健的特性，就是其占据的宽度正好是1个中文宽度，而且基本上不受字体影响。</p>
-<p>&thinsp;<br>  它叫“窄空格”，全称是 Thin Space。我们不妨称之为“瘦弱空格”，就是该空格长得比较瘦弱，身体单薄，占据的宽度比较小。它是em之六分之一宽。</p>
-<p>&zwnj;<br>  它叫零宽不连字，全称是 Zero Width Non Joiner，简称“ZWNJ”，是一个不打印字符，放在电子文本的两个字符之间，抑制本来会发生的连字，而是以这两个字符原本的字形来绘制。Unicode中的零宽不连字字符映射为“”（zero width non-joiner，U+200C），HTML字符值引用为： “‌”</p>
-<p>&zwj;<br>  它叫零宽连字，全称是 Zero Width Joiner，简称“ZWJ”，是一个不打印字符，放在某些需要复杂排版语言（如阿拉伯语、印地语）的两个字符之间，使得这两个本不会发生连字的字符产生了连字效果。零宽连字符的Unicode码位是U+200D (HTML: ‍ ‍）。<br>此外，浏览器还会把以下字符当作空白进行解析：空格（ ）、制表位（    ）、换行（ ）和回车（ ）还有（　）等等。</p>
-<center>这一行需要居中 </center><br/>
-<font face="黑体" size=10>我是黑体字</font>
-<font color=red size=72>颜色</font>
-注意：配置文件编码格式改成UTF8.不然中文乱码
-
+    
+    <a class="article-more-a" href="/2019/11/21/Markdown%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/#more">more >></a>
+    
     
 
     
@@ -722,7 +548,7 @@ hexo s<figure class="highlight plain"><table><tr><td class="gutter"><pre><span c
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>网站开发<br>开源爱好者、Linux<br><br>联系QQ:2069161570<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家的到来</div>
   	  	
     	</section>
     
